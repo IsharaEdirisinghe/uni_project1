@@ -1,17 +1,20 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage.jsx";
-import JobDetails from "./JobDetails.jsx";
-import ApplyForm from "./ApplyForm.jsx";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import JobView from './HomePage'; // Your new HomePage
+import JobDetails from './JobDetails';
+import ApplyForm from './ApplyForm';
 
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/job/:id" element={<JobDetails />} />
-        <Route path="/apply/:id" element={<ApplyForm />} />
+        <Route path="/" element={<JobView />} />
+        {/* Path updated to match your new HomePage link */}
+        <Route path="/jobDetails" element={<JobDetails />} />
+        <Route path="/apply" element={<ApplyForm />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
+
+export default App;
